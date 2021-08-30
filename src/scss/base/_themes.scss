@@ -1,0 +1,30 @@
+$themes: (
+    dark-theme: (
+        'text-color': hsl(0, 0%, 100%),
+        'bg-color': hsl(207, 26%, 17%),
+        'border-color': hsl(207, 26%, 27%),
+        'element-color': hsl(208, 23%, 22%),
+        'box-shadow': rgba(255, 255, 255, 0.15) 1.95px 1.95px 2.6px,
+    ),
+    light-theme: (
+        'text-color': hsl(200, 15%, 8%),
+        'bg-color': hsl(0, 0%, 98%),
+        'border-color': hsl(0, 0%, 88%),
+        'element-color': hsl(0, 0%, 100%),
+        'input-color': hsl(0, 0%, 52%),
+    ),
+);
+
+@mixin theme() {
+    @each $theme, $map in $themes {
+        $theme-map: $map !global;
+        .#{$theme} & {
+            @content;
+        }
+    }
+    $theme-map: null !global;
+}
+
+@function theme-get($key) {
+    @return map-get($theme-map, $key);
+}

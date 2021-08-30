@@ -1,0 +1,57 @@
+#site_title {
+    font-size: $font-title;
+    font-weight: $font-bold;
+
+    :hover {
+        @include theme() {
+            color: lighten(theme-get('text-color'), 20%);
+        }
+    }
+}
+
+#nav_toggle {
+    @include theme() {
+        background-color: theme-get('element-color') !important;
+    }
+}
+
+.toggle_link {
+    @include theme() {
+        color: theme-get('text-color');
+    }
+    font-weight: $font-semibold;
+
+    :hover {
+        @include theme() {
+            color: theme-get('text-color');
+        }
+    }
+}
+
+@include media-breakpoint-up(xs) {
+    #site_title {
+        font-size: 14px !important;
+    }
+
+    .fa-moon {
+        font-size: 12px;
+    }
+
+    .toggle_link {
+        font-size: 12px;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    #site_title {
+        font-size: $font-title !important;
+    }
+
+    .fa-moon {
+        font-size: 20px;
+    }
+
+    .toggle_link {
+        font-size: 20px;
+    }
+}

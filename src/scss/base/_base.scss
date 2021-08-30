@@ -1,0 +1,42 @@
+@import '../../../node_modules/bootstrap/scss/mixins';
+@import '../../../node_modules/bootstrap/scss/functions';
+@import '../../../node_modules/bootstrap/scss/variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+// Dark bg-color to RGB
+$dark_rgb: 32, 44, 55;
+
+:root {
+    --bs-dark-rgb: #{$dark_rgb};
+}
+
+html {
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-size: $font_home;
+}
+
+html,
+body {
+    @extend %colors;
+    height: 100vh;
+}
+
+body {
+    font-family: $font_family;
+}
+
+a {
+    @include theme() {
+        color: theme-get('text-color');
+    }
+    text-decoration: none;
+}
+
+.btn {
+    @extend %colors;
+    @include theme() {
+        border-color: theme-get('border-color');
+    }
+}

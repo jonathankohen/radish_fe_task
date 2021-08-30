@@ -1,0 +1,43 @@
+.details {
+    font-size: $font-detail;
+
+    #details_title {
+        @extend %title;
+    }
+
+    .details_bold {
+        font-weight: $font-semibold;
+        margin-right: 7px;
+    }
+
+    .details_btn {
+        @include theme() {
+            color: theme-get('text-color');
+            background-color: theme-get('element-color');
+            border-color: theme-get('border-color');
+        }
+
+        &:hover {
+            @include theme() {
+                border-color: theme-get('border-color');
+                box-shadow: theme-get('box-shadow') !important;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(xs) {
+    .details_flag {
+        width: 100%;
+        height: 30vh;
+        object-fit: cover;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .details_flag {
+        width: 100%;
+        height: 50vh;
+        object-fit: cover;
+    }
+}

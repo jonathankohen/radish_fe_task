@@ -1,0 +1,35 @@
+.card {
+    @include theme() {
+        color: theme-get('text-color');
+        background-color: theme-get('element-color');
+    }
+
+    font-size: $font-detail;
+
+    .card-title {
+        @include theme() {
+            color: theme-get('text-color');
+        }
+        font-weight: $font-bold;
+    }
+
+    .card_bold {
+        font-weight: $font-semibold;
+    }
+
+    .card-text {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@include media-breakpoint-up(xs) {
+    .card {
+        margin: 0 10px;
+
+        .card-img-top {
+            width: 100%;
+            min-height: 25vh;
+            object-fit: cover;
+        }
+    }
+}

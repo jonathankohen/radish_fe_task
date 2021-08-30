@@ -1,0 +1,44 @@
+.input-group-text {
+    @include theme() {
+        border-color: theme-get('element-color');
+    }
+}
+
+#search_icon {
+    @include theme() {
+        background-color: theme-get('element-color');
+        color: theme-get('text-color');
+    }
+    border: none;
+}
+
+#search_input {
+    @include theme() {
+        background-color: theme-get('element-color');
+        border-color: theme-get('element-color');
+        color: theme-get('text-color');
+    }
+    font-size: $font-home;
+
+    &::placeholder {
+        @include theme() {
+            color: theme-get('text-color');
+        }
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 0.25rem hsla(0, 0%, 100%, 0.25);
+    }
+}
+
+#select {
+    @include theme() {
+        color: theme-get('text-color');
+        background-color: theme-get('element-color');
+        border-color: theme-get('bg-color');
+    }
+    font-size: $font-home;
+    font-weight: $font-reg;
+    background-image: none;
+    border: none;
+}

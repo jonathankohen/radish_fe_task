@@ -1,0 +1,23 @@
+@mixin textShadow {
+    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
+        0px 18px 23px rgba(0, 0, 0, 0.1);
+}
+
+@mixin textShadowSm {
+    text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.4), 0px 2px 3px rgba(0, 0, 0, 0.1),
+        0px 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+%title {
+    @include theme() {
+        color: theme-get('text-color');
+    }
+    font-weight: $font-bold;
+}
+
+%colors {
+    @include theme() {
+        color: theme-get('text-color') !important;
+        background-color: theme-get('element-color') !important;
+    }
+}
